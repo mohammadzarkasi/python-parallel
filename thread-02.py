@@ -11,12 +11,22 @@ def f2():
     time.sleep(3)
     print('fungsi f2 selesai')
 
+
 print('membuat thread untuk fungsi f1 dan f2')
 t1 = th.Thread(target=f1)
 t2 = th.Thread(target=f2)
 
+
 print('menjalankan thread...')
 t1.start()
 t2.start()
+
+
+print('memanggil fungsi join')
+t1.join()
+print('f1 telah di-join')
+t2.join()
+print('f2 telah di-join')
+
 
 print('program selesai')

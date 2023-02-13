@@ -11,12 +11,7 @@ def f2():
     time.sleep(3)
     print('fungsi f2 selesai')
 
-print('membuat thread untuk fungsi f1 dan f2')
-t1 = th.Thread(target=f1)
-t2 = th.Thread(target=f2)
-
-print('menjalankan thread...')
-t1.start()
-t2.start()
+f1()
+f2()
 
 print('program selesai')
