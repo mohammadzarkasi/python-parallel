@@ -1,4 +1,3 @@
-import threading as th
 import time
 import multiprocessing as mp
 
@@ -12,15 +11,16 @@ def jalankan():
     start = time.perf_counter()
     print('membuat process untuk fungsi dengan looping')
     
+    n_process = 20
     processes = []
-    for i in range(10):
+    for i in range(n_process):
         p = mp.Process(target=f1, args=[i])
         p.start()
         processes.append(p)
     
-    for i in range(10):
+    for i in range(n_process):
         processes[i].join()
-        print('join process #' + str(i) + ' selesai')
+        # print('join process #' + str(i) + ' selesai')
 
     # print('program selesai')
     finish = time.perf_counter()
