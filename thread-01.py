@@ -1,6 +1,8 @@
 import threading as th
 import time
 
+start = time.perf_counter()
+
 def f1():
     print('memulai fungsi f1...')
     time.sleep(5)
@@ -19,4 +21,6 @@ print('menjalankan thread...')
 t1.start()
 t2.start()
 
-print('program selesai')
+finish = time.perf_counter()
+
+print('program selesai', round(finish - start), 'detik')
